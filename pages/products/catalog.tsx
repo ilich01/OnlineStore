@@ -1,16 +1,12 @@
 import React from "react";
-import Header from "../components/Header/Headr";
+import Header from "../../components/Header/Headr";
+import Catalog from "../../components/Catalog/Catalog";
 
 const Products = ({ products }) => {
   return (
     <>
       <Header />
-      <h1>Popular products</h1>
-      <ul>
-        {products.map((product) => (
-          <li key={product.id}>{product.title}</li>
-        ))}
-      </ul>
+      <Catalog products={products} />
     </>
   );
 };
