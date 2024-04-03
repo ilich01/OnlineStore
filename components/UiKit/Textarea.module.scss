@@ -1,0 +1,30 @@
+.textarea {
+  height: 20px;
+  margin-right: 10px;
+  margin-bottom: 10px;
+  //   width: 445px;
+  border: 1px solid #616161;
+  resize: none;
+  outline: none;
+  overflow: hidden;
+  padding: 10px;
+  font-size: 14px;
+  font-family: Arial, Helvetica, sans-serif;
+  &:focus {
+    border: 1px solid #56b280;
+  }
+  &::placeholder {
+    color: #616161;
+  }
+}
+.textarea[width="small"] {
+  width: 127px;
+}
+
+.textarea[width="medium"] {
+  width: 206px;
+}
+
+.textarea[width="large"] {
+  width: 445px;
+}

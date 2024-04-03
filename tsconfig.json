@@ -17,7 +17,7 @@
     "next-env.d.ts",
     "**/*.ts",
     "**/*.tsx",
-    "pages/products/catalog.tsx"
+    "pages/products/index.tsx"
   ],
   "exclude": ["node_modules"]
 }

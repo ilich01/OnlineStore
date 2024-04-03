@@ -1,0 +1,35 @@
+.quantity {
+  height: 40px;
+  width: 120px;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  font-size: 25px;
+  border: 1px solid rgb(187, 187, 187);
+  margin-top: 5px;
+  margin-bottom: 20px;
+  button {
+    background: #fff;
+    border: none;
+    font-size: 20px;
+    cursor: pointer;
+    margin: 0 5px;
+    color: rgb(165, 165, 165);
+  }
+
+  span {
+    margin: 0 5px;
+  }
+
+  button:hover {
+    color: rgb(162, 213, 162);
+  }
+
+  button:active {
+    color: rgb(139, 209, 139);
+  }
+}
+.title {
+  font-size: medium;
+  font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
+}

@@ -5,9 +5,11 @@ const Index = ({ products }) => {
   return (
     <div>
       <Header />
-      <h1>Главная страница</h1>
-      <Link href="/products">Products</Link>
-      <Popular products={products} />
+      {/* <h1>Главная страница</h1> */}
+      <div>
+        <Link href="/products">Products</Link>
+        <Popular products={products} />
+      </div>
     </div>
   );
 };

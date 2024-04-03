@@ -1,1 +1,46 @@
+.page_wrapper {
+  display: flex;
+  justify-content: space-around;
+  padding-top: 50px;
 
+  img {
+    padding-left: 100px;
+    width: auto;
+    height: 500px;
+  }
+}
+.title h2 {
+  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+    "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+  font-size: 50px;
+}
+.functionGroup {
+  padding-left: 20px;
+}
+.description {
+  width: 450px;
+  font-size: 20px;
+  padding-top: 40px;
+  width: 85%;
+  font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
+}
+.price {
+  font-size: 30px;
+  color: #56b280;
+  display: flex;
+  padding-right: 75px;
+  justify-content: end;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+.button {
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  font-size: large;
+  align-items: center;
+  display: flex;
+  height: 42px;
+  width: 350px;
+  .icon {
+    width: 30px;
+    height: 30px;
+  }
+}

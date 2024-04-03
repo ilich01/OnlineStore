@@ -12,7 +12,9 @@ const Header = () => {
         <p>Contuct Us</p>
       </div>
       <div className={s.iconsGrop}>
-        <img src="/icons/profile.svg" alt="Profile" />
+        <Link href={"/auth"}>
+          <img src="/icons/profile.svg" alt="Profile" />
+        </Link>
         <img src="/icons/cart.svg" alt="Cart" />
       </div>
     </div>

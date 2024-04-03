@@ -1,0 +1,15 @@
+.selector {
+  height: 40px;
+  width: 470px;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 14px;
+  font-family: Arial, Helvetica, sans-serif;
+  color: #616161;
+  padding-left: 5px;
+  &:focus {
+    border: 1px solid #56b280;
+  }
+}
+.placeholder {
+  color: #616161;
+}

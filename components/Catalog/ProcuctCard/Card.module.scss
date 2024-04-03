@@ -1,21 +1,54 @@
 .container {
-  background-color: #ffffff;
   height: 280px;
-  width: 255px;
+  width: 245px;
   padding: 0px;
   border-radius: 10px;
-  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
   position: relative;
-  img {
+
+  .imageCard {
+    background-color: #fff;
     height: 210px;
-    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden; // Чтобы изображение не выходило за пределы контейнера
+    transition: all 0.3s ease; // Добавляем плавную анимацию для всех свойств при изменении
+
+    &:hover {
+      .productName {
+        text-decoration: dashed;
+      }
+      transform: scale(1.03); // Увеличиваем масштаб при наведении
+    }
+  }
+
+  img {
+    height: 90%;
+    width: 70%;
     border-radius: 10px 10px 0px 0px;
+    transition: all 0.2s ease;
+
+    &:hover {
+      height: 90%;
+      width: 70%;
+    }
+  }
+
+  a {
+    color: black;
+    text-decoration: none;
   }
 }
+
+.card-container {
+  border: 2px solid transparent;
+}
+
 .productName {
   padding-left: 10px;
   padding-top: 5px;
 }
+
 .price {
   font-size: 20px;
   color: #56b280;
