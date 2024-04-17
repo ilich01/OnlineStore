@@ -4,7 +4,8 @@ const Popular = ({ products }) => {
   const productInfo = products.data.products.edges;
   return (
     <div className={s.page_wrapper}>
-      <h1>Popular Products</h1>
+      <p className={s.description}>New arrivals</p>
+      <h1 className={s.title}>Spring '24</h1>
       <div className={s.container}>
         {productInfo.slice(0, 8).map((product) => (
           <div key={product.id}>

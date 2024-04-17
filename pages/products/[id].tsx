@@ -19,7 +19,6 @@ export async function getServerSideProps({ params }) {
     )}%22){id%20title%20description%20featuredImage%20{id%20url}%20variants(first:%203){edges%20{cursor%20node%20{id%20title%20image%20{url}%20price%20{amount%20currencyCode}}}}}}`
   );
   const product = await response.json();
-  console.log(product);
   return {
     props: { product },
   };

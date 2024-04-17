@@ -7,21 +7,19 @@ import { addItem } from "../../store/slices/cartSlice";
 
 const Product = ({ product }) => {
   const curerentProduct = product.data.product;
-  // console.log(curerentProduct);
   const [quantity, setQuantity] = useState(1); // Состояние для количества товара
   const dispatch = useDispatch();
 
-  const handleIncrement = () => {
-    setQuantity((prevQuantity) => prevQuantity + 1); // Увеличение количества на 1
-  };
-
-  const handleDecrement = () => {
-    if (quantity > 1) {
-      setQuantity((prevQuantity) => prevQuantity - 1); // Уменьшение количества на 1 (если больше 1)
-    }
-  };
   const handleAddToCart = () => {
-    dispatch(addItem({ id: curerentProduct.id, quantity }));
+    dispatch(
+      addItem({
+        id: curerentProduct.id,
+        title: curerentProduct.title,
+        image: curerentProduct.featuredImage,
+        price: curerentProduct.variants.edges[0].node.price.amount,
+        quantity,
+      })
+    );
   };
   return (
     <div className={s.page_wrapper}>
@@ -39,11 +37,6 @@ const Product = ({ product }) => {
           <div className={s.price}>
             {curerentProduct.variants.edges[0].node.price.amount}$
           </div>
-          <Counter
-            handleIncrement={handleIncrement}
-            handleDecrement={handleDecrement}
-            quantity={quantity}
-          />
           <button className={s.button}>
             <img
               className={s.icon}

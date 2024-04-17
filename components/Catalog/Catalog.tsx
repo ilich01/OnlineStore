@@ -1,6 +1,7 @@
 import s from "./Catalog.module.scss";
 import Card from "./ProcuctCard/Card";
 const Catalog = ({ products }) => {
+  console.log("productList:", products);
   const productInfo = products.data.products.edges;
   return (
     <div className={s.page_wrapper}>

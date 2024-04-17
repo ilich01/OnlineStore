@@ -1,12 +1,11 @@
-.baner {
-  display: block;
-  max-width: 100%;
-  // position: absolute;
-  top: 0;
-  left: 0;
-  height: 630px;
-  width: 100%;
+@font-face {
+  font-family: "DrukFont";
+  src: url("../../public/fonts/Druk-Medium-Trial.otf") format("otf");
+
+  font-weight: normal;
+  font-style: normal;
 }
+
 button {
   background-color: #56b280;
   border: none;
@@ -17,4 +16,20 @@ button {
     background-color: #92b09f;
   }
   color: #fff;
+}
+a {
+  text-decoration: none;
+  color: black;
+  :hover {
+    text-decoration: underline;
+  }
+  :active {
+    color: #92b09f;
+  }
+}
+body {
+  margin: 0px;
+}
+p {
+  font-family: "Courier New", Courier, monospace;
 }

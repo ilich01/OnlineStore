@@ -17,8 +17,24 @@
   padding-left: 165px;
 }
 .iconsGrop {
+  position: relative;
   padding-right: 165px;
   img {
     margin-right: 10px;
   }
+}
+
+.quantity {
+  font-family: "Courier New", Courier, monospace;
+  height: 20px;
+  width: 20px;
+  border-radius: 50%;
+  background-color: rgb(3, 172, 3);
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  margin-left: 60px;
+  margin-bottom: 25px;
+  color: white;
+  cursor: default;
 }
