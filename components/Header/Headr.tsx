@@ -28,7 +28,11 @@ const Header = () => {
         <Link href={"/auth"}>
           <img src="/icons/profile.svg" alt="Profile" />
         </Link>
-        <div className={s.quantity}>{cartQuantity}</div>
+        {cartItems.length === 0 ? (
+          <div></div>
+        ) : (
+          <div className={s.quantity}>{cartQuantity}</div>
+        )}
         <Link href={"/cart"}>
           <img src="/icons/cart.svg" alt="Cart" />
         </Link>

@@ -22,7 +22,7 @@ const Index = ({ products, loading }) => {
 
 export default Index;
 
-export async function getServerSideProps() {
+export async function getStaticProps() {
   try {
     let loading = true;
     const response = await fetch(

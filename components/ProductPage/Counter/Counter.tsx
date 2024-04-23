@@ -22,7 +22,7 @@ const Counter = ({ item, quantity }) => {
         <button onClick={() => changeQuantity(item, Math.max(1, quantity - 1))}>
           -
         </button>
-        <span>{quantity}</span>
+        <span className={s.quantity}>{quantity}</span>
         <button onClick={() => changeQuantity(item, Math.max(1, quantity + 1))}>
           +
         </button>
