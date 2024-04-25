@@ -17,7 +17,8 @@
     "next-env.d.ts",
     "**/*.ts",
     "**/*.tsx",
-    "pages/products/index.tsx"
+    "pages/products/index.tsx",
+    "components/User/UserSignUpForm/UserSignUpForm.tsx"
   ],
   "exclude": ["node_modules"]
 }

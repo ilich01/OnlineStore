@@ -1,12 +1,18 @@
 import Link from "next/link";
 import s from "./Header.module.scss";
 import { useEffect, useState } from "react";
-import { useDispatch } from "react-redux";
-import { setCartItems } from "../../store/slices/cartSlice";
 import { useSelector } from "react-redux";
+import { useDispatch } from "react-redux";
+import { toggleForm } from "../../store/slices/userSlice";
+
 const Header = () => {
+  const dispatch = useDispatch();
+  const { currentUser } = useSelector(({ user }) => user);
   const [cartQuantity, setCartQuantity] = useState(0);
   const cartItems = useSelector((state: any) => state.cart.items);
+  const handldeClick = () => {
+    if (!currentUser) dispatch(toggleForm(true));
+  };
 
   useEffect(() => {
     setCartQuantity(cartItems.length);
@@ -25,9 +31,11 @@ const Header = () => {
         <p>Contuct Us</p>
       </div>
       <div className={s.iconsGrop}>
-        <Link href={"/auth"}>
+        {/* <Link href={"/auth"}> */}
+        <div onClick={handldeClick}>
           <img src="/icons/profile.svg" alt="Profile" />
-        </Link>
+        </div>
+        {/* </Link> */}
         {cartItems.length === 0 ? (
           <div></div>
         ) : (

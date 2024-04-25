@@ -3,10 +3,12 @@ import Header from "../components/Header/Headr";
 import Popular from "../components/PopularProducts/Popular";
 import { Loader } from "../components/Loader/Loader";
 import Banner from "../components/Banner/Banner";
+import UserForm from "../components/User/UserForm";
 
 const Index = ({ products, loading }) => {
   return (
     <div>
+      <UserForm />
       <Header />
       {loading ? (
         <Loader />
