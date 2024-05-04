@@ -1,8 +1,6 @@
-.textarea {
+.input {
   height: 20px;
-  margin-right: 10px;
-  margin-bottom: 10px;
-  //   width: 445px;
+  width: 330px;
   border: 1px solid #616161;
   resize: none;
   outline: none;
@@ -16,15 +14,4 @@
   &::placeholder {
     color: #616161;
   }
-}
-.textarea[width="small"] {
-  width: 127px;
-}
-
-.textarea[width="medium"] {
-  width: 206px;
-}
-
-.textarea[width="large"] {
-  width: 445px;
 }

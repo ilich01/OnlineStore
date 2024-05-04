@@ -1,0 +1,41 @@
+.form {
+  width: 100%;
+  height: 400px;
+  position: absolute;
+  display: grid;
+  justify-content: center;
+  align-items: center;
+  align-content: space-evenly;
+}
+.title {
+  font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
+  font-size: 30px;
+  width: 265px;
+}
+.link {
+  text-decoration: none;
+  color: black;
+  font-family: "Courier New", Courier, monospace;
+  cursor: pointer;
+  &:hover {
+    text-decoration: underline;
+  }
+  &:active {
+    color: #92b09f;
+  }
+}
+.submit {
+  font-family: "Courier New", Courier, monospace;
+  height: 40px;
+  width: 100%;
+}
+.header {
+  display: flex;
+  justify-content: space-around;
+  margin-top: 40px;
+}
+.close {
+  height: 40px;
+  width: 40px;
+  cursor: pointer;
+}

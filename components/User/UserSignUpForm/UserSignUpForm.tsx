@@ -1,10 +1,11 @@
 import Link from "next/link";
-import s from "./userSignUpForm.module.scss";
+import s from "./LoginForm.module.scss";
 import { useState } from "react";
 import { useDispatch } from "react-redux";
 import { createUser, toggleForm } from "../../../store/slices/userSlice";
+import { Input } from "../../UiKit/Input";
 
-const UserSignUpFrom = ({ formClose }) => {
+const UserSignUpFrom = ({ formClose, toggleCurrentFormType }) => {
   const [values, setValues] = useState({
     name: "",
     email: "",
@@ -30,60 +31,52 @@ const UserSignUpFrom = ({ formClose }) => {
   return (
     <>
       <div className={s.wrapper}>
-        <div className={s.close} onClick={formClose}>
-          <img src="/icons/close.svg" alt="Cart" />
+        <div className={s.header}>
+          <div className={s.title}>Sign Up</div>
+          <div onClick={formClose}>
+            <img className={s.close} src="/icons/close.svg" alt="Cart" />
+          </div>
         </div>
-        <div className={s.title}>SignUp</div>
         <form className={s.form} onSubmit={handleSubmit}>
           <div className={s.group}>
-            <input
+            <Input
               type="email"
               name="email"
               placeholder="Your Email"
               value={values.email}
-              autoComplete="off"
               onChange={handleChange}
               required
             />
           </div>
           <div className={s.group}>
-            <input
+            <Input
               type="name"
               name="name"
               placeholder="Your Full Name"
               value={values.name}
-              autoComplete="off"
               onChange={handleChange}
               required
             />
           </div>
           <div className={s.group}>
-            <input
+            <Input
               type="password"
               name="password"
               placeholder="Your password"
               value={values.password}
-              autoComplete="off"
               onChange={handleChange}
               required
             />
           </div>
-          <div className={s.group}>
-            <input
-              type="avatar"
-              name="avatar"
-              placeholder="Your avatar"
-              value={values.avatar}
-              autoComplete="off"
-              onChange={handleChange}
-              required
-            />
-          </div>
-          <div className={s.link}>
-            <Link href="/"> I already have an account</Link>
+          <div className={s.group}></div>
+          <div
+            className={s.link}
+            onClick={() => toggleCurrentFormType("login")}
+          >
+            Already have an account
           </div>
           <button className={s.submit} type="submit">
-            Create an account
+            Sign Up
           </button>
         </form>
       </div>

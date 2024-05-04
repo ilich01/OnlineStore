@@ -12,15 +12,15 @@ const cartSlice = createSlice({
       if (found) {
         newCart = newCart.map((item) => {
           return item.id === payload.id
-            ? { ...item, quantity: payload.quantity || item.quantity }
+            ? { ...item, quantity: payload.quantity || item.quantity + 1 }
             : item;
         });
-      } else newCart.push({ ...payload, quantity: payload.quantity });
+      } else newCart.push({ ...payload, quantity: 1 });
       state.items = newCart;
     },
     updateItemQuantity: (state, { payload }) => {
       const { id, quantity } = payload;
-      const itemToUpdate = state.items.find((item) => item === item.id);
+      const itemToUpdate = state.items.find((item) => item.id === id);
       if (itemToUpdate) {
         itemToUpdate.quantity = quantity;
       }
