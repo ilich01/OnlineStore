@@ -1,8 +1,8 @@
 import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
-import axios from "axios";
+import axios, { AxiosError } from "axios";
 export const loginUser = createAsyncThunk(
   "users/loginUser",
-  async (payload: object, thunkAPI) => {
+  async (payload: object, { rejectWithValue }) => {
     try {
       const res = await axios.post(
         "https://api.escuelajs.co/api/v1/auth/login",
@@ -19,8 +19,14 @@ export const loginUser = createAsyncThunk(
 
       return login.data;
     } catch (err) {
-      console.log(err);
-      return thunkAPI.rejectWithValue(err);
+      if (axios.isAxiosError(err)) {
+        const axiosError = err as AxiosError;
+        const status = axiosError.response?.status;
+        const message =
+          status === 401 ? "Wrong login or password" : "Something went wrong";
+        return rejectWithValue({ status, message });
+      }
+      return rejectWithValue({ status: 500, message: "Internal Server Error" });
     }
   }
 );
@@ -51,7 +57,7 @@ const userSlice = createSlice({
     formType: "signUp",
     showForm: false,
     success: false,
-    error: false,
+    error: "", // Добавляем поле для хранения текста ошибки
   },
   reducers: {
     toggleForm: (state, { payload }) => {
@@ -68,26 +74,15 @@ const userSlice = createSlice({
     },
   },
   extraReducers: (builder) => {
-    // builder.addCase(createUser.fulfilled, addCurrentUser);
-    // builder.addCase(loginUser.fulfilled, addCurrentUser);
-    builder
-      // .addCase(createUser.fulfilled, (state, { payload }) => {
-      //   state.currentUser = payload;
-      //   state.success = true;
-      // })
-      .addCase(loginUser.fulfilled, (state, { payload }) => {
-        state.currentUser = payload;
-        state.success = true;
-      })
-      // .addCase(createUser.rejected, (state) => {
-      //   state.error = true;
-      // })
-      .addCase(loginUser.rejected, (state) => {
-        state.error = true;
-      });
-    // builder.addCase(updateUser.fulfilled, addCurrentUser);
+    builder.addCase(createUser.fulfilled, addCurrentUser);
+    builder.addCase(loginUser.fulfilled, addCurrentUser);
+    builder.addCase(loginUser.rejected, (state, action) => {
+      state.isLoading = false;
+      state.error = action.error.message;
+    });
   },
 });
+
 export const { toggleForm, toggleFormType, setSuccess, setError } =
   userSlice.actions;
 export default userSlice.reducer;

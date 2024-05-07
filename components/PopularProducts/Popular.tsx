@@ -9,7 +9,7 @@ const Popular = ({ products }) => {
       <div className={s.container}>
         {productInfo.slice(0, 8).map((product) => (
           <div key={product.id}>
-            <Card product={product} />
+            <Card product={product} key={product.id} />
           </div>
         ))}
         <div />
