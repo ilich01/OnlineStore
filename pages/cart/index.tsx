@@ -1,12 +1,11 @@
 import Cart from "../../components/Cart/Cart";
-import Header from "../../components/Header/Headr";
+import useLayout from "../../components/Layout/Layout";
 
 const CartPage = () => {
   return (
     <>
-      <Header />
       <Cart />
     </>
   );
 };
-export default CartPage;
+export default useLayout(CartPage);

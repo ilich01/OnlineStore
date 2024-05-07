@@ -1,15 +1,13 @@
-import Link from "next/link";
-import Header from "../components/Header/Headr";
 import Popular from "../components/PopularProducts/Popular";
-import { Loader } from "../components/Loader/Loader";
+
 import Banner from "../components/Banner/Banner";
-import UserForm from "../components/User/UserForm";
+
+import useLayout from "../components/Layout/Layout";
+import Loader from "../components/Loader/Loader";
 
 const Index = ({ products, loading }) => {
   return (
     <div>
-      <UserForm />
-      <Header />
       {loading ? (
         <Loader />
       ) : (
@@ -22,7 +20,7 @@ const Index = ({ products, loading }) => {
   );
 };
 
-export default Index;
+export default useLayout(Index);
 
 export async function getStaticProps() {
   try {

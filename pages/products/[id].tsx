@@ -1,17 +1,15 @@
 import { useRouter } from "next/router";
-import Header from "../../components/Header/Headr";
 import Product from "../../components/ProductPage/Product";
+import useLayout from "../../components/Layout/Layout";
 
 const ProductPage = ({ product }) => {
-  const { query } = useRouter();
   return (
     <>
-      <Header />
       <Product product={product} />
     </>
   );
 };
-export default ProductPage;
+export default useLayout(ProductPage);
 export async function getServerSideProps({ params }) {
   const response = await fetch(
     `https://mock.shop/api?query={product(id:%20%22${encodeURIComponent(

@@ -37,10 +37,12 @@ const Cart = () => {
             {cartItems.map((item) => (
               <>
                 <div className={s.itmesBox}>
-                  <div className={s.title}>
-                    <img className={s.mainImage} src={item.image.url} />
-                    {item.title}
-                  </div>
+                  <Link href={`/products/${encodeURIComponent(item.id)}`}>
+                    <div className={s.title}>
+                      <img className={s.mainImage} src={item.image.url} />
+                      {item.title}
+                    </div>
+                  </Link>
                   <div className={s.price}>${item.price}</div>
                   <Counter quantity={item.quantity} item={item} />
                   <div
