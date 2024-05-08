@@ -13,7 +13,12 @@ const UserLoginForm = ({ formClose, toggleCurrentFormType }) => {
   const isLoading = useSelector((state: any) => state.user.isLoading);
   const errorMessage = useSelector((state: any) => state.user.error);
   const currentUser = useSelector((state: any) => state.user.currentUser);
-
+  const success = useSelector((state: any) => state.user.success); // Исправлено на success
+  useEffect(() => {
+    if (success) {
+      formClose();
+    }
+  }, [success, formClose]);
   const handleChange = ({ target: { value, name } }) => {
     setValues({ ...values, [name]: value });
   };
@@ -26,6 +31,7 @@ const UserLoginForm = ({ formClose, toggleCurrentFormType }) => {
     if (!isNotEmpty) return;
     await dispatch(loginUser(values) as any);
   };
+
   return (
     <>
       <div className={s.wrapper}>

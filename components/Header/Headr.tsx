@@ -20,8 +20,8 @@ const Header = () => {
 
   return (
     <div className={s.container}>
-      <Link className={s.logo} href={"/"}>
-        <img src="/icons/logo.svg" alt="" />
+      <Link href={"/"}>
+        <img className={s.logo} src="/icons/images/logo.gif" alt="" />
       </Link>
       <div className={s.navGroup}>
         <Link href={"/products"}>
@@ -31,11 +31,17 @@ const Header = () => {
         <p>Contuct Us</p>
       </div>
       <div className={s.iconsGrop}>
-        {/* <Link href={"/auth"}> */}
-        <div onClick={handldeClick}>
-          <img src="/icons/profile.svg" alt="Profile" />
-        </div>
-        {/* </Link> */}
+        {currentUser ? (
+          <Link href={"/auth"}>
+            <div onClick={handldeClick}>
+              <img src="/icons/profile.svg" alt="Profile" />
+            </div>
+          </Link>
+        ) : (
+          <div onClick={handldeClick}>
+            <img src="/icons/profile.svg" alt="Profile" />
+          </div>
+        )}
         {cartItems.length === 0 ? (
           <div></div>
         ) : (

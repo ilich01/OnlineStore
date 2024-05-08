@@ -5,7 +5,7 @@ const Catalog = ({ products }) => {
   const productInfo = products.data.products.edges;
   return (
     <div className={s.page_wrapper}>
-      <h1>Products</h1>
+      <h1 className={s.title}>Products</h1>
       <div className={s.container}>
         {productInfo.map((product) => (
           <div key={products.id}>

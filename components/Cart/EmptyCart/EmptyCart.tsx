@@ -4,8 +4,8 @@ const EmptyCart = () => {
   return (
     <div className={s.container}>
       <h1 className={s.title}>You cart is empty</h1>
-      <Link href="/">
-        <button className={s.button}>Go to shopping</button>
+      <Link href="/" className={s.button}>
+        Go to shopping
       </Link>
     </div>
   );

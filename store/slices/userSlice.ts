@@ -48,6 +48,7 @@ export const createUser = createAsyncThunk<
 
 const addCurrentUser = (state, { payload }) => {
   state.currentUser = payload;
+  state.success = true;
 };
 const userSlice = createSlice({
   name: "user",
@@ -78,7 +79,7 @@ const userSlice = createSlice({
     builder.addCase(loginUser.fulfilled, addCurrentUser);
     builder.addCase(loginUser.rejected, (state, action) => {
       state.isLoading = false;
-      state.error = action.error.message;
+      state.error = "ogin or pasword error";
     });
   },
 });

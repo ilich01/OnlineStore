@@ -2,7 +2,6 @@
   display: grid;
   align-items: center;
   justify-content: center;
-  background-color: #f3f3f3;
 }
 .title {
   font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
@@ -10,6 +9,8 @@
   margin-top: 0;
 }
 .button {
+  display: flex;
+  justify-content: center;
   background-color: black;
   border: 1px solid white;
   color: rgb(255, 255, 255);

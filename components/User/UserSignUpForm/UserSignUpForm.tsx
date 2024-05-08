@@ -29,7 +29,6 @@ const UserSignUpFrom = ({ formClose, toggleCurrentFormType }) => {
   const handleSubmit = (e) => {
     e.preventDefault();
 
-    // Validation
     const errorsCopy = { ...errors };
     let hasError = false;
 
