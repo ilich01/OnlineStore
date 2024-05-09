@@ -1,10 +1,21 @@
-import React, { useState, useEffect } from "react";
-import Header from "../../components/Header/Headr";
-import Catalog from "../../components/Catalog/Catalog";
 import useLayout from "../../components/Layout/Layout";
-import Loader from "../../components/Loader/Loader";
+import UserInfo from "../../components/User/UserInfo/UserInfo";
 
-const Products = ({ products }) => {
-  return <h1>Personal information</h1>;
+const AuthPage = ({ countries }) => {
+  return (
+    <>
+      <UserInfo countries={countries} />
+    </>
+  );
 };
-export default useLayout(Products);
+export default useLayout(AuthPage);
+export async function getServerSideProps() {
+  const response = await fetch(
+    "https://countriesnow.space/api/v0.1/countries/states"
+  );
+  const countries = await response.json();
+
+  return {
+    props: { countries },
+  };
+}

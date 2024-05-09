@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import s from "./Selector.module.scss";
-const Selector = ({ options, onSelect }) => {
+const Selector = ({ options, onSelect, name, value }) => {
   const [selectedOption, setSelectedOption] = useState("");
   const handleChange = (event) => {
     setSelectedOption(event.target.value);
@@ -9,11 +9,12 @@ const Selector = ({ options, onSelect }) => {
 
   return (
     <select
+      name={name}
       value={selectedOption}
       onChange={handleChange}
       className={s.selector}
     >
-      <option value="">
+      <option value={value}>
         <span className={s.placeholder}>Country</span>
       </option>
       {options.map((option) => (

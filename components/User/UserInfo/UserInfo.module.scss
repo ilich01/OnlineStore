@@ -1,0 +1,21 @@
+.formContainer {
+  display: grid;
+}
+.adress {
+  justify-content: center;
+  display: grid;
+}
+.submit {
+  font-family: "Courier New", Courier, monospace;
+  height: 40px;
+  width: 356px;
+  margin: 20px;
+}
+.title {
+  margin: 20px;
+  display: flex;
+  justify-content: end;
+  font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
+  font-size: 30px;
+  width: 265px;
+}

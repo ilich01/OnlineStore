@@ -61,6 +61,9 @@ const userSlice = createSlice({
     error: "", // Добавляем поле для хранения текста ошибки
   },
   reducers: {
+    addUserInfo: (state, { payload }) => {
+      state.currentUser = { ...state.currentUser, userInfo: payload };
+    },
     toggleForm: (state, { payload }) => {
       state.showForm = payload;
     },
@@ -84,6 +87,6 @@ const userSlice = createSlice({
   },
 });
 
-export const { toggleForm, toggleFormType, setSuccess, setError } =
+export const { toggleForm, toggleFormType, setSuccess, setError, addUserInfo } =
   userSlice.actions;
 export default userSlice.reducer;

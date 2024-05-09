@@ -6,6 +6,10 @@
 }
 .container {
   align-items: center;
+  .title {
+    margin-left: 70px;
+    font-size: 30px;
+  }
 }
 .header {
   padding-top: 20px;
@@ -48,9 +52,12 @@
   width: 32px;
 }
 .footer {
-  display: flex;
+  display: grid;
   justify-content: end;
   margin-right: 100px;
+}
+.total {
+  display: flex;
 }
 .subTotal {
   font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
@@ -78,5 +85,25 @@
   &:hover {
     width: 35px;
     height: 35px;
+  }
+}
+.button {
+  display: flex;
+  height: 40px;
+  width: 140px;
+  justify-content: center;
+  background-color: black;
+  border: 1px solid white;
+  color: rgb(255, 255, 255);
+  padding: 10px 10px;
+  border-radius: 5px;
+  font-size: 18px;
+  cursor: pointer;
+
+  &:hover {
+    background-color: transparent !important;
+    border: 1px solid black;
+    text-decoration: none !important;
+    color: black; // Измените цвет текста при наведении на кнопку
   }
 }
